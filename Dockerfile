@@ -1,7 +1,7 @@
 FROM tomcat:10.1.13-jdk11
 RUN rm -rf /usr/local/tomcat/webapps/ROOT
 RUN rm -rf /usr/local/tomcat/webapps/examples
-ADD ch5-02.war /usr/local/tomcat/webapps/
+ADD Final.war /usr/local/tomcat/webapps/
 
 EXPOSE 8443
 CMD ["catalina.sh", "run"]
