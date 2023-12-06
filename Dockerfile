@@ -2,10 +2,10 @@ FROM tomcat:10.1.13-jdk11
 RUN rm -rf /usr/local/tomcat/webapps/ROOT
 RUN rm -rf /usr/local/tomcat/webapps/examples
 ADD Final.war /usr/local/tomcat/webapps/
-ADD postgresql-42.7.0.jar /usr/local/tomcat/lib/
+COPY postgresql-42.7.0.jar /usr/local/tomcat/lib/
 
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
+CMD ["docker-entrypoint.h", "run"]
 
 #1 Apache Tomcat phiên bản 9.0 và Java 11 sử dụng Corretto (OpenJDK) trên Amazon Linux 2.
 #2 Dòng này xóa thư mục /usr/local/tomcat/webapps/ROOT trong hình ảnh cơ sở. Thư mục này thường chứa ứng dụng mặc định của Tomcat.
